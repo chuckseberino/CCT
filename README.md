@@ -19,7 +19,7 @@ following OSes:
 
 * Windows 7 (x64) with Visual Studio 2013 Update 5
 * OSX El Capitan (10.11.3) with XCode 7.2.1
-* Ubuntu 14.04 x64 with GCC 9.4.1
+* Ubuntu 14.04 x64 with GCC 4.9.1
 
 The code currently targets compute capability 3.0, 3.5, and 5.2, which should
 cover most GPUs within the last few years.
