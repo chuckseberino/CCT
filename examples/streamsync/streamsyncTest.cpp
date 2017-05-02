@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     {
         if (args[i] == "-t") numThreads = std::stoi(args[++i]);
         else if (args[i] == "-j") StreamsyncTest::numJobs = std::stoi(args[++i]);
-        else if (args[i] == "-s") StreamsyncTest::numStreams = std::stoi(args[++i]) == 1;
+        else if (args[i] == "-s") StreamsyncTest::syncStreams = std::stoi(args[++i]) == 1;
         else
         {
             CCT_ERROR("Unknown cmd-line argument: " << args[i]);
