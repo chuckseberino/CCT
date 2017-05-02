@@ -18,7 +18,10 @@
 set(CUDA_NVCC_FLAGS_DEBUG "-G -g" CACHE STRING "" FORCE)
 
 # Default Windows flag(s)
-set(CCT_NVCC_FLAGS -Xcompiler -wd4267)                    #Thrust warning
+set(CCT_NVCC_FLAGS -Xcompiler -wd4267)  #Thrust warning
+
+# Set C++11 support in CMake
+set (CMAKE_CXX_STANDARD 11)
 
 # Which are overwritten on Linux
 if (CMAKE_HOST_UNIX)
@@ -27,9 +30,10 @@ endif (CMAKE_HOST_UNIX)
 
 set(CUDA_NVCC_FLAGS ${CCT_NVCC_FLAGS}
     -Xcudafe --diag_suppress=field_without_dll_interface  #DLL warning
-    -gencode arch=compute_30,code=sm_30                   #Support for Macbook
-    -gencode arch=compute_35,code=sm_35                   #Support for K40/K80
-    -gencode arch=compute_52,code=sm_52                   #Support for Titan X
+    -gencode arch=compute_30,code=sm_30 #Support for Macbook
+    -gencode arch=compute_35,code=sm_35 #Support for Kepler (K40/K80)
+    -gencode arch=compute_52,code=sm_52 #Support for Maxwell (Titan X, M6000)
+    -gencode arch=compute_61,code=sm_61 #Support for Pascal (P6000, P100)
     CACHE STRING "" FORCE
 )
 
