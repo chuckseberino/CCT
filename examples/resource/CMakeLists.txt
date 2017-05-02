@@ -15,8 +15,5 @@
 # You should have received a copy of the GNU General Public License
 # along with CCT.  If not, see <http://www.gnu.org/licenses/>.
 
-add_subdirectory(hardware)
-add_subdirectory(memory)
-add_subdirectory(multilevel)
-add_subdirectory(resource)
-add_subdirectory(streamsync)
+cct_cuda_add_executable(resourceTest resourceTest.cu)
+target_link_libraries(resourceTest gpu)
